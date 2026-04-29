@@ -117,6 +117,12 @@
 			<artifactId>firebase-admin</artifactId>
 			<version>9.3.0</version>
 		</dependency>
+		<!-- Carga variables desde .env en desarrollo -->
+		<dependency>
+			<groupId>io.github.cdimascio</groupId>
+			<artifactId>dotenv-java</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
