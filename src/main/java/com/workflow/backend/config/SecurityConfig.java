@@ -35,6 +35,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/seed/**").permitAll()
                         .requestMatchers("/ws/**").permitAll()
                         .requestMatchers("/api/ai/**").permitAll()
+                        .requestMatchers("/actuator/health").permitAll()
                         // Departamentos: GET for ADMIN or FUNCIONARIO, mutations for ADMIN only
                         .requestMatchers(HttpMethod.GET, "/api/departamentos").hasAnyRole("ADMIN", "FUNCIONARIO")
                         .requestMatchers(HttpMethod.POST, "/api/departamentos/**").hasRole("ADMIN")

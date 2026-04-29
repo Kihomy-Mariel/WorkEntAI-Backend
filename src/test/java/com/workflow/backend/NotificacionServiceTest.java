@@ -2,6 +2,8 @@ package com.workflow.backend;
 
 import com.workflow.backend.models.Notificacion;
 import com.workflow.backend.repositories.NotificacionRepository;
+import com.workflow.backend.repositories.UsuarioRepository;
+import com.workflow.backend.services.FcmService;
 import com.workflow.backend.services.NotificacionService;
 import com.workflow.backend.websocket.NotificacionWebSocket;
 import org.junit.jupiter.api.Test;
@@ -27,6 +29,12 @@ class NotificacionServiceTest {
 
     @Mock
     private NotificacionWebSocket notificacionWebSocket;
+
+    @Mock
+    private UsuarioRepository usuarioRepository;
+
+    @Mock
+    private FcmService fcmService;
 
     @InjectMocks
     private NotificacionService notificacionService;
