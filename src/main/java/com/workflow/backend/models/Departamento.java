@@ -1,7 +1,7 @@
 package com.workflow.backend.models;
 
-import com.workflow.backend.enums.RolUsuario;
 import lombok.Data;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -10,29 +10,21 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import java.time.LocalDateTime;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "usuarios")
-public class Usuario {
+@Document(collection = "departamentos")
+public class Departamento {
 
     @Id
     private String id;
 
+    @Indexed(unique = true)
     private String nombre;
 
-    @Indexed(unique = true)
-    private String email;
+    private String descripcion;
 
-    private String password;
+    private String responsableId;
 
-    private RolUsuario rol;
-
-    private String departamento;
-
-    private boolean activo = true;
-
-    private LocalDateTime fechaCreacion = LocalDateTime.now();
-
-    // Token FCM para notificaciones push móvil
-    private String fcmToken;
+    private LocalDateTime fechaCreacion;
 }

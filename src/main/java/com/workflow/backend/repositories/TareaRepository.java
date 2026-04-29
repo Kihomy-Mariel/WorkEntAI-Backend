@@ -12,4 +12,7 @@ public interface TareaRepository extends MongoRepository<Tarea, String> {
     List<Tarea> findByTramiteId(String tramiteId);
     List<Tarea> findByFuncionarioIdAndEstado(String funcionarioId, EstadoTarea estado);
     List<Tarea> findByEstado(EstadoTarea estado);
+    List<Tarea> findByDepartamento(String departamento);
+    List<Tarea> findByPoliticaIdAndEstado(String politicaId, EstadoTarea estado);
+    List<Tarea> findByDepartamentoAndEstado(String departamento, EstadoTarea estado);
 }
